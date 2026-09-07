@@ -8,6 +8,7 @@
         minApiLevel="3.2.0">
         <iq:products>
             <iq:product id="edge840"/>
+            <iq:product id="edge540"/>
         </iq:products>
         <iq:permissions>
             <iq:uses-permission id="Sensor"/>

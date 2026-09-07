@@ -1,6 +1,15 @@
 # Build artifacts
 *.iq
 *.iq.debug.xml
+*.prg
+*.prg.debug.xml
+bin/
+
+# Developer keys (PRIVATE — never commit!)
+developer_key.der
+developer_key.pem
+*.der
+*.pem
 
 # IDE / OS
 .DS_Store
