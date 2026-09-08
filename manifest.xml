@@ -1,6 +1,6 @@
 <iq:manifest version="3" xmlns:iq="http://www.garmin.com/xml/connectiq">
     <iq:application
-        id="9a8b7c6d-5e4f-3a2b-1c0d-9e8f7a6b5c4d"
+        id="3939F555-5B1D-4F1A-99E3-C395708C4C9D"
         type="datafield"
         name="@Strings.TrafficLightSpeed"
         entry="EdgeRideFieldApp"
