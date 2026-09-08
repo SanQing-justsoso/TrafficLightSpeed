@@ -91,7 +91,7 @@ class EdgeRideFieldView extends WatchUi.DataField {
             unitFont = Graphics.FONT_SMALL;
         }
 
-        // 大字区域：数值（大字）+ 单位（小字）
+        // 大字区域：数值（大字）+ 单位（小字，紧跟数字右边同一行）
         var speedText = formatSpeed(_currentSpeed);
         if (_currentSpeed == null) {
             // 没定位：小号 "--"，不带单位，下移
@@ -100,14 +100,21 @@ class EdgeRideFieldView extends WatchUi.DataField {
                 "--",
                 Graphics.TEXT_JUSTIFY_CENTER | Graphics.TEXT_JUSTIFY_VCENTER);
         } else {
-            // 数值大字（居中偏上）+ 单位小字（居中偏下）
+            // 数字 + 单位横向排，整体居中
+            var numW = dc.getTextWidthInPixels(speedText, bigFont);
+            var unitW = dc.getTextWidthInPixels(_unit, unitFont);
+            var gap = 3;
+            var totalW = numW + gap + unitW;
+            var startX = (w - totalW) / 2;
+            var unitY = h / 2 + 4;
+
             dc.setColor(darkColor, Graphics.COLOR_TRANSPARENT);
-            dc.drawText(w / 2, h / 2 - 6, bigFont,
+            dc.drawText(startX + numW / 2, h / 2, bigFont,
                 speedText,
                 Graphics.TEXT_JUSTIFY_CENTER | Graphics.TEXT_JUSTIFY_VCENTER);
 
             dc.setColor(grayColor, Graphics.COLOR_TRANSPARENT);
-            dc.drawText(w / 2, h / 2 + 6, unitFont,
+            dc.drawText(startX + numW + gap + unitW / 2, unitY, unitFont,
                 _unit,
                 Graphics.TEXT_JUSTIFY_CENTER | Graphics.TEXT_JUSTIFY_VCENTER);
         }
