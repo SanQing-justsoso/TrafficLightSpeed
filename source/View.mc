@@ -106,7 +106,7 @@ class EdgeRideFieldView extends WatchUi.DataField {
             var gap = 3;
             var totalW = numW + gap + unitW;
             var startX = (w - totalW) / 2;
-            var numY = h / 2 + 6;
+            var numY = h / 2 + 12;
             var unitY = numY + 4;
 
             dc.setColor(darkColor, Graphics.COLOR_TRANSPARENT);
