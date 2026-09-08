@@ -1,4 +1,4 @@
-# EdgeSpeedColor
+# TrafficLightSpeed
 
 一个给 Garmin Edge 码表用的 Connect IQ 数据字段（Data Field），用「红绿灯」的视觉语言告诉你：**你现在骑得比平均速度快还是慢**。
 
@@ -32,7 +32,7 @@
 ## 项目结构
 
 ```
-EdgeSpeedColor/
+TrafficLightSpeed/
 ├── manifest.xml              # 应用清单（声明 Edge 840 / 540）
 ├── monkey.jungle             # 编译入口
 ├── source/
@@ -63,8 +63,8 @@ bash build.sh
 
 会分别为两个设备生成独立的 `.prg`：
 
-- `bin/EdgeSpeedColor-edge840.prg`
-- `bin/EdgeSpeedColor-edge540.prg`
+- `bin/TrafficLightSpeed-edge840.prg`
+- `bin/TrafficLightSpeed-edge540.prg`
 
 > 注意：`build.sh` 中的 `SDK_DIR` 路径需要改成你自己的 SDK 安装位置。
 
@@ -73,7 +73,7 @@ bash build.sh
 1. 码表用 USB 连接电脑，会显示为一个可移动磁盘
 2. 将对应设备的 `.prg` 文件拷贝到 `GARMIN/APPS/` 目录
 3. 断开 USB，码表重启
-4. 进入骑行活动页 → 编辑数据页 → 添加数据字段 → Connect IQ 分类 → 选择 **EdgeSpeedColor**
+4. 进入骑行活动页 → 编辑数据页 → 添加数据字段 → Connect IQ 分类 → 选择 **TrafficLightSpeed**
 
 ## License
 

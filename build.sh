@@ -1,5 +1,5 @@
 #!/bin/bash
-# EdgeSpeedColor 编译脚本
+# TrafficLightSpeed 编译脚本
 # 分别为 Edge 840 和 Edge 540 编译独立的 .prg 文件
 SDK_DIR="$HOME/AppData/Roaming/Garmin/ConnectIQ/Sdks/connectiq-sdk-win-9.2.0-2026-06-09-92a1605b2"
 JAR="$SDK_DIR/bin/monkeybrains.jar"
@@ -30,8 +30,8 @@ build_device() {
       -w
 }
 
-build_device edge840 "$PWD/bin/EdgeSpeedColor-edge840.prg"
-build_device edge540 "$PWD/bin/EdgeSpeedColor-edge540.prg"
+build_device edge840 "$PWD/bin/TrafficLightSpeed-edge840.prg"
+build_device edge540 "$PWD/bin/TrafficLightSpeed-edge540.prg"
 
 echo "=== 完成，产物： ==="
 ls -la bin/*.prg
