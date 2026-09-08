@@ -15,7 +15,7 @@
             <iq:uses-permission id="UserProfile"/>
         </iq:permissions>
         <iq:languages>
-            <iq:language>chs</iq:language>
+            <iq:language>zhs</iq:language>
         </iq:languages>
     </iq:application>
 </iq:manifest>
