@@ -106,10 +106,11 @@ class EdgeRideFieldView extends WatchUi.DataField {
             var gap = 3;
             var totalW = numW + gap + unitW;
             var startX = (w - totalW) / 2;
-            var unitY = h / 2 + 4;
+            var numY = h / 2 + 6;
+            var unitY = numY + 4;
 
             dc.setColor(darkColor, Graphics.COLOR_TRANSPARENT);
-            dc.drawText(startX + numW / 2, h / 2, bigFont,
+            dc.drawText(startX + numW / 2, numY, bigFont,
                 speedText,
                 Graphics.TEXT_JUSTIFY_CENTER | Graphics.TEXT_JUSTIFY_VCENTER);
 
