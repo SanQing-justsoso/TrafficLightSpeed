@@ -43,7 +43,6 @@ class EdgeRideFieldView extends WatchUi.DataField {
         var h = dc.getHeight();
 
         var darkColor = Graphics.COLOR_BLACK;
-        var grayColor = Graphics.COLOR_DK_GRAY;
 
         if (_currentSpeed == null || _averageSpeed == null || _averageSpeed <= 0) {
             // 未定位：三段红绿灯（上绿、中黄、下红）
@@ -107,14 +106,19 @@ class EdgeRideFieldView extends WatchUi.DataField {
             var totalW = numW + gap + unitW;
             var startX = (w - totalW) / 2;
             var numY = h / 2 + 12;
-            var unitY = numY + 4;
+            // 单位 baseline 对齐数字 baseline
+            var numAsc = Graphics.getFontAscent(bigFont);
+            var numDesc = Graphics.getFontDescent(bigFont);
+            var unitAsc = Graphics.getFontAscent(unitFont);
+            var unitDesc = Graphics.getFontDescent(unitFont);
+            var unitY = numY + (numAsc - numDesc) / 2 - (unitAsc - unitDesc) / 2;
 
             dc.setColor(darkColor, Graphics.COLOR_TRANSPARENT);
             dc.drawText(startX + numW / 2, numY, bigFont,
                 speedText,
                 Graphics.TEXT_JUSTIFY_CENTER | Graphics.TEXT_JUSTIFY_VCENTER);
 
-            dc.setColor(grayColor, Graphics.COLOR_TRANSPARENT);
+            dc.setColor(darkColor, Graphics.COLOR_TRANSPARENT);
             dc.drawText(startX + numW + gap + unitW / 2, unitY, unitFont,
                 _unit,
                 Graphics.TEXT_JUSTIFY_CENTER | Graphics.TEXT_JUSTIFY_VCENTER);
