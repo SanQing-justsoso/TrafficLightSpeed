@@ -75,19 +75,19 @@ class EdgeRideFieldView extends WatchUi.DataField {
 
         // 标题（顶部）
         dc.setColor(darkColor, Graphics.COLOR_TRANSPARENT);
-        dc.drawText(w / 2, 8, Graphics.FONT_XTINY,
+        dc.drawText(w / 2, 10, Graphics.FONT_TINY,
             "Speed / Avg",
             Graphics.TEXT_JUSTIFY_CENTER | Graphics.TEXT_JUSTIFY_VCENTER);
 
         // 字号
-        var bigFont = Graphics.FONT_LARGE;
-        var unitFont = Graphics.FONT_SMALL;
+        var bigFont = Graphics.FONT_NUMBER_MEDIUM;
+        var unitFont = Graphics.FONT_MEDIUM;
         if (h < 55) {
-            bigFont = Graphics.FONT_MEDIUM;
-            unitFont = Graphics.FONT_XTINY;
+            bigFont = Graphics.FONT_LARGE;
+            unitFont = Graphics.FONT_SMALL;
         } else if (h >= 80) {
             bigFont = Graphics.FONT_NUMBER_HOT;
-            unitFont = Graphics.FONT_SMALL;
+            unitFont = Graphics.FONT_MEDIUM;
         }
 
         // 大字区域：数值（大字）+ 单位（小字，紧跟数字右边同一行）
@@ -126,7 +126,7 @@ class EdgeRideFieldView extends WatchUi.DataField {
 
         // 右上角平均速度（无单位，y=18）
         dc.setColor(darkColor, Graphics.COLOR_TRANSPARENT);
-        dc.drawText(w - 2, 18, Graphics.FONT_SMALL,
+        dc.drawText(w - 2, 27, Graphics.FONT_MEDIUM,
             formatSpeed(_averageSpeed),
             Graphics.TEXT_JUSTIFY_RIGHT | Graphics.TEXT_JUSTIFY_VCENTER);
     }
